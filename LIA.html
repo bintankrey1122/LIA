@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>Love Login</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+#ff8fc6,
+#ffd7ea,
+#fff0f7);
+
+}
+
+
+/* HATI */
+
+.hearts span{
+
+position:absolute;
+
+bottom:-100px;
+
+font-size:35px;
+
+animation:
+love 8s linear infinite;
+
+opacity:.7;
+}
+
+@keyframes love{
+
+0%{
+transform:
+translateY(0)
+rotate(0deg);
+
+opacity:0;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+
+transform:
+translateY(-120vh)
+rotate(360deg);
+
+opacity:0;
+}
+
+}
+
+
+
+/* BOX */
+
+.box{
+
+width:350px;
+
+padding:35px;
+
+background:
+rgba(255,255,255,.35);
+
+border-radius:25px;
+
+text-align:center;
+
+backdrop-filter:
+blur(12px);
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.2);
+
+animation:
+float 3s infinite;
+
+z-index:2;
+}
+
+
+@keyframes float{
+
+50%{
+
+transform:
+translateY(-8px);
+
+}
+
+}
+
+
+
+input{
+
+width:100%;
+padding:14px;
+
+margin:10px 0;
+
+border:none;
+
+outline:none;
+
+border-radius:15px;
+}
+
+
+
+/* TOMBOL */
+
+button{
+
+width:100%;
+
+padding:14px;
+
+margin-top:10px;
+
+border:none;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+45deg,
+#ff4d99,
+#ff8ec6);
+
+color:white;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+animation:
+pulse 2s infinite;
+}
+
+
+button:hover{
+
+transform:
+scale(1.07);
+
+box-shadow:
+0 0 20px pink;
+}
+
+
+@keyframes pulse{
+
+50%{
+
+transform:
+scale(1.03);
+
+}
+
+}
+
+
+
+/* FOTO */
+
+.photo{
+
+width:160px;
+height:160px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:
+5px solid white;
+
+box-shadow:
+0 0 20px pink;
+
+margin-bottom:15px;
+
+animation:
+spin 6s linear infinite;
+}
+
+
+@keyframes spin{
+
+50%{
+
+transform:
+rotate(5deg)
+scale(1.05);
+
+}
+
+}
+
+
+
+.hide{
+
+display:none;
+}
+
+
+h1,h2{
+
+color:#ff3b8d;
+margin-bottom:15px;
+}
+
+p{
+
+color:#ff4d99;
+line-height:28px;
+}
+
+
+#error{
+
+color:red;
+margin-top:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- HATI -->
+
+<div class="hearts">
+
+<span style="left:5%">💖</span>
+<span style="left:25%">💕</span>
+<span style="left:50%">💘</span>
+<span style="left:75%">❤️</span>
+<span style="left:90%">💞</span>
+
+</div>
+
+
+
+<!-- LOGIN -->
+
+<div
+class="box"
+id="loginPage">
+
+<h1>💌 Login Love</h1>
+
+<input
+id="user"
+placeholder="Username">
+
+<input
+id="pass"
+type="password"
+placeholder="Password">
+
+<button
+onclick="login()">
+
+Login 💖
+
+</button>
+
+<p id="error"></p>
+
+</div>
+
+
+
+<!-- HOME -->
+
+<div
+class="box hide"
+id="homePage">
+
+
+<img
+
+src="file:///C:/Users/bintank%20reyyalink/Downloads/my%20kisah.jpeg"
+
+class="photo">
+
+
+<h2>
+
+Hai LIAAAAAAAAAAAAAA 💕
+
+</h2>
+
+<p>
+
+Selamat datang 🌸<br>
+
+Semoga harimu indah 💖<br>
+
+Jangan lupa tersenyum ✨
+
+</p>
+
+
+<button
+onclick="alert('Peluk virtual 🤗💕')">
+
+Peluk Aku 🤗
+
+</button>
+
+
+<button
+onclick="logout()">
+
+Logout 💔
+
+</button>
+
+</div>
+
+
+
+<script>
+
+function login(){
+
+let user=
+document.getElementById(
+"user").value;
+
+let pass=
+document.getElementById(
+"pass").value;
+
+
+if(
+user=="LIAAAAAAAAAAAAAA"
+&&
+pass=="123"
+){
+
+loginPage
+.classList.add(
+"hide");
+
+homePage
+.classList.remove(
+"hide");
+
+}
+
+else{
+
+error.innerHTML=
+"Login salah 💔";
+
+}
+
+}
+
+
+
+function logout(){
+
+homePage
+.classList.add(
+"hide");
+
+loginPage
+.classList.remove(
+"hide");
+
+}
+
+</script>
+
+</body>
+</html>
